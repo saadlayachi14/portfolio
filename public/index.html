@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Saad Layachi · SLAB Ingénierie · Sites web, applications et IA à Vernon</title>
+<meta name="description" content="Saad Layachi, ingénieur INSA Rouen, fondateur de SLAB Ingénierie à Vernon. Sites web, applications métier, documents automatiques et assistants IA pour les commerçants, les artisans et les PME.">
+<link rel="canonical" href="https://saadlayachi.com/">
+<meta name="theme-color" content="#060606">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://saadlayachi.com/">
+<meta property="og:title" content="Saad Layachi · SLAB Ingénierie">
+<meta property="og:description" content="Sites web, applications métier et IA, livrés et en service. Vernon, Normandie.">
+<meta property="og:image" content="https://saadlayachi.com/assets/img/og.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/saira.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.classList.add("js");</script>
+<style>
+/* Saira (SIL Open Font License), one variable file: weight 100 to 900, width 50 to 125 %. */
+@font-face { font-family: "Saira"; src: url("assets/fonts/saira.woff2") format("woff2"); font-weight: 100 900; font-stretch: 50% 125%; font-display: swap; }
+
+/* The look of SLAB Ingénierie: black, gold, silver. */
+:root {
+  --bg: #060606; --panel: #0d0d0c; --panel-2: #141413;
+  --line: rgba(255, 255, 255, 0.09); --line-strong: rgba(255, 255, 255, 0.17);
+  --text: #efefec; --soft: #b6b6b1; --dim: #8a8a85;
+  --gold: #e3a93c; --gold-light: #f7d67e; --gold-deep: #b87a1d;
+  --wrap: 1160px; --pad: clamp(20px, 5vw, 48px); --radius: 16px; --header: 64px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header) + 12px); -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: "Saira", system-ui, "Segoe UI", sans-serif; font-size: 1.06rem; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, p, ul, ol, figure { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+.wrap { width: min(100% - 2 * var(--pad), var(--wrap)); margin-inline: auto; }
+.skip { position: absolute; left: -999px; top: 8px; padding: 8px 14px; background: var(--gold); color: #000; border-radius: 8px; z-index: 100; }
+.skip:focus { left: 8px; }
+
+/* Lettering */
+h1, h2, h3, .wide { font-stretch: 125%; font-weight: 600; letter-spacing: 0.005em; text-wrap: balance; }
+h1 { font-size: clamp(2.25rem, 1.25rem + 4.2vw, 4.3rem); line-height: 1.04; }
+h2 { font-size: clamp(1.8rem, 1.2rem + 2.4vw, 3rem); line-height: 1.1; }
+h3 { font-size: clamp(1.3rem, 1.1rem + 0.9vw, 1.75rem); line-height: 1.15; }
+.silver { background: linear-gradient(180deg, #ffffff 10%, #c4c4bf 95%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.gold { background: linear-gradient(180deg, var(--gold-light), var(--gold) 55%, var(--gold-deep)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+/* A label spaced out between two gold hairlines, like the second line of the logo. */
+.label { display: inline-flex; align-items: center; gap: 14px; font-size: 0.76rem; font-weight: 400; letter-spacing: 0.34em; text-transform: uppercase; color: var(--soft); }
+.label::before, .label.deux::after { content: ""; width: 34px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
+.label.deux::after { background: linear-gradient(90deg, var(--gold), transparent); }
+.lead { font-size: clamp(1.08rem, 1rem + 0.5vw, 1.3rem); color: var(--soft); max-width: 40em; text-wrap: pretty; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; padding: 12px 26px; border-radius: 999px; font: inherit; font-weight: 600; font-stretch: 112%; letter-spacing: 0.02em; text-decoration: none; white-space: nowrap; transition: transform .2s, box-shadow .2s, border-color .2s, background .2s; }
+.btn svg { width: 19px; height: 19px; flex: none; }
+.btn-gold { background: linear-gradient(180deg, var(--gold-light), var(--gold) 60%, #cf9226); color: #0b0b0a; box-shadow: 0 10px 30px rgba(227, 169, 60, 0.22); }
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(227, 169, 60, 0.34); }
+.btn-line { border: 1px solid var(--line-strong); color: var(--text); }
+.btn-line:hover { border-color: var(--gold); transform: translateY(-2px); }
+
+/* Header */
+.top { position: sticky; top: 0; z-index: 50; height: var(--header); background: rgba(6, 6, 6, 0.78); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+.top-in { height: 100%; display: flex; align-items: center; gap: 26px; }
+.brand { display: flex; align-items: center; gap: 12px; margin-right: auto; text-decoration: none; }
+.brand img { width: 36px; height: 36px; border-radius: 9px; }
+.brand span { font-size: 0.95rem; font-weight: 600; font-stretch: 125%; letter-spacing: 0.16em; }
+.nav { display: flex; gap: 28px; }
+.nav a { font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; color: var(--soft); padding: 6px 0; border-bottom: 1px solid transparent; transition: color .2s, border-color .2s; }
+.nav a:hover { color: var(--text); border-color: var(--gold); }
+.top .btn { min-height: 40px; padding: 8px 18px; font-size: 0.92rem; }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; }
+.hero-in { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: clamp(20px, 4vw, 60px); align-items: center; padding-block: clamp(40px, 7vw, 96px) clamp(36px, 5vw, 70px); }
+.hero h1 { margin-top: 22px; }
+.hero .lead { margin-top: 24px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+.hero-logo { justify-self: center; width: min(100%, 500px); }
+.hero-logo img { width: 100%; height: auto; }
+.chiffres { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.chiffres li { padding: clamp(20px, 3vw, 34px) clamp(14px, 2.2vw, 30px); border-left: 1px solid var(--line); }
+.chiffres li:first-child { border-left: 0; padding-left: 0; }
+.chiffres b { display: block; font-size: clamp(1.9rem, 1.3rem + 2.2vw, 3rem); font-weight: 600; font-stretch: 125%; line-height: 1; }
+.chiffres span { display: block; margin-top: 10px; font-size: 0.94rem; line-height: 1.4; color: var(--soft); }
+
+/* Sections */
+section { padding-block: clamp(64px, 9vw, 128px); }
+.head { max-width: 46rem; margin-bottom: clamp(36px, 5vw, 64px); }
+.head h2 { margin-top: 18px; }
+.head .lead { margin-top: 18px; }
+
+/* Projects: a screenshot in a window, a phone over its corner, the text beside. */
+.projets { display: grid; gap: clamp(64px, 9vw, 120px); }
+.projet { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 76px); align-items: center; }
+.projet:nth-child(even) .media { order: 2; }
+.media { position: relative; padding: 0 5% 6% 0; }
+.projet:nth-child(even) .media { padding: 0 0 6% 5%; }
+.fenetre { border: 1px solid var(--line-strong); border-radius: 14px; overflow: hidden; background: #111110; box-shadow: 0 34px 90px rgba(0, 0, 0, 0.7); transition: transform .35s, box-shadow .35s; }
+.fenetre::before { content: ""; display: block; height: 30px; border-bottom: 1px solid var(--line); background: radial-gradient(circle at 18px 50%, #3b3b38 4.5px, transparent 5px), radial-gradient(circle at 36px 50%, #3b3b38 4.5px, transparent 5px), radial-gradient(circle at 54px 50%, #3b3b38 4.5px, transparent 5px), #161615; }
+.fenetre img { width: 100%; height: auto; }
+.telephone { position: absolute; right: 0; bottom: 0; width: 23%; border: 1px solid var(--line-strong); border-radius: clamp(12px, 1.8vw, 22px); overflow: hidden; background: #111110; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75); transition: transform .35s; }
+.projet:nth-child(even) .telephone { right: auto; left: 0; }
+.media:hover .fenetre { transform: translateY(-5px); }
+.media:hover .telephone { transform: translateY(-9px); }
+.projet .label { color: var(--gold); }
+.projet h3 { margin-top: 16px; }
+.projet .quoi { margin-top: 6px; font-size: 0.95rem; letter-spacing: 0.04em; color: var(--dim); }
+.projet p.texte { margin-top: 18px; color: var(--soft); text-wrap: pretty; }
+.lien { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; font-weight: 600; font-stretch: 112%; text-decoration: none; color: var(--gold-light); border-bottom: 1px solid rgba(227, 169, 60, 0.45); padding-bottom: 3px; transition: border-color .2s, gap .2s; }
+.lien:hover { border-color: var(--gold-light); gap: 12px; }
+
+/* In a company: figures on a panel */
+.entreprise { margin-top: clamp(64px, 9vw, 120px); display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(16px, 2.4vw, 28px); }
+.carte { padding: clamp(24px, 3.4vw, 44px); border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(180deg, var(--panel-2), var(--panel)); }
+.carte .label { color: var(--gold); }
+.carte h3 { margin-top: 16px; }
+.carte p { margin-top: 14px; color: var(--soft); text-wrap: pretty; }
+.mesures { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 28px; padding-top: 26px; border-top: 1px solid var(--line); }
+.mesures b { display: block; font-size: clamp(1.6rem, 1.2rem + 1.5vw, 2.4rem); font-weight: 600; font-stretch: 125%; line-height: 1; }
+.mesures span { display: block; margin-top: 8px; font-size: 0.9rem; line-height: 1.35; color: var(--soft); }
+
+/* Services */
+.services { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 28px); }
+.service { position: relative; padding: clamp(24px, 3.2vw, 40px); border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); transition: border-color .25s, transform .25s; }
+.service:hover { border-color: rgba(227, 169, 60, 0.5); transform: translateY(-3px); }
+.service i { font-style: normal; font-size: 0.84rem; letter-spacing: 0.3em; color: var(--gold); }
+.service h3 { margin-top: 14px; }
+.service p { margin-top: 12px; color: var(--soft); text-wrap: pretty; }
+.apres { margin-top: clamp(28px, 4vw, 44px); color: var(--dim); }
+
+/* About */
+.apropos { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(28px, 5vw, 80px); align-items: start; }
+.portrait .cadre { position: relative; }
+.portrait img { width: 100%; height: auto; border-radius: var(--radius); }
+.portrait .cadre::after { content: ""; position: absolute; inset: 12px -12px -12px 12px; border: 1px solid rgba(227, 169, 60, 0.55); border-radius: var(--radius); z-index: -1; }
+.portrait figcaption { margin-top: 26px; font-size: 0.92rem; color: var(--dim); }
+.histoire h2 { margin-top: 18px; }
+.histoire p { margin-top: 18px; color: var(--soft); text-wrap: pretty; max-width: 38em; }
+.histoire h2 + p { margin-top: 26px; font-size: clamp(1.1rem, 1rem + 0.5vw, 1.3rem); color: var(--text); }
+.etapes { margin-top: clamp(44px, 6vw, 80px); display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid var(--line-strong); }
+.etapes li { position: relative; padding: 26px 18px 0 0; }
+.etapes li::before { content: ""; position: absolute; top: -5px; left: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 14px rgba(227, 169, 60, 0.7); }
+.etapes b { display: block; font-size: 1.5rem; font-weight: 600; font-stretch: 125%; line-height: 1; }
+.etapes em { display: block; margin-top: 8px; font-style: normal; font-size: 0.74rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); }
+.etapes span { display: block; margin-top: 8px; font-size: 0.94rem; line-height: 1.4; color: var(--soft); }
+
+/* Contact */
+.contact { text-align: center; border-top: 1px solid var(--line); background: radial-gradient(60% 70% at 50% 0%, rgba(227, 169, 60, 0.1), transparent 70%); }
+.contact .lead { margin: 20px auto 0; }
+.contact h2 { margin-top: 18px; }
+.numero { display: inline-block; margin-top: 36px; font-size: clamp(2rem, 1.2rem + 4vw, 4rem); font-weight: 600; font-stretch: 125%; line-height: 1; text-decoration: none; }
+.contact .actions { justify-content: center; }
+
+/* Footer */
+.foot { padding-block: 34px calc(34px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); font-size: 0.9rem; color: var(--dim); }
+.foot-in { display: flex; flex-wrap: wrap; gap: 14px 32px; align-items: center; justify-content: space-between; }
+.foot a { color: var(--soft); text-underline-offset: 3px; }
+.foot details { flex-basis: 100%; }
+.foot summary { cursor: pointer; width: fit-content; color: var(--soft); text-decoration: underline; text-underline-offset: 3px; }
+.foot details p { margin-top: 12px; max-width: 60em; }
+
+/* Phone: two actions always within reach */
+.dock { display: none; }
+
+/* Appearing on scroll */
+.js .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+.js .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .btn, .fenetre, .telephone, .service { transition: none; }
+  .btn:hover, .media:hover .fenetre, .media:hover .telephone, .service:hover { transform: none; }
+}
+
+@media (max-width: 980px) {
+  .nav { display: none; }
+  .hero-in { grid-template-columns: minmax(0, 1fr); }
+  .hero-logo { order: -1; width: min(72%, 330px); margin-top: -10px; }
+  .hero-in { text-align: center; }
+  .hero .lead { margin-inline: auto; }
+  .hero .actions { justify-content: center; }
+  .chiffres { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .chiffres li { padding-left: clamp(14px, 4vw, 30px); }
+  .chiffres li:nth-child(odd) { border-left: 0; padding-left: 0; }
+  .chiffres li:nth-child(n + 3) { border-top: 1px solid var(--line); }
+  .projet, .entreprise, .apropos { grid-template-columns: minmax(0, 1fr); }
+  .projet:nth-child(even) .media { order: 0; }
+  .portrait { max-width: 380px; }
+  .etapes { grid-template-columns: minmax(0, 1fr); border-top: 0; border-left: 1px solid var(--line-strong); }
+  .etapes li { padding: 0 0 30px 26px; }
+  .etapes li:last-child { padding-bottom: 0; }
+  .etapes li::before { top: 6px; left: -5px; }
+}
+@media (max-width: 700px) {
+  body { padding-bottom: calc(74px + env(safe-area-inset-bottom)); }
+  .top .btn { display: none; }
+  .services { grid-template-columns: minmax(0, 1fr); }
+  .mesures { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .hero .actions .btn, .contact .actions .btn { flex: 1 1 100%; }
+  .dock { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: rgba(6, 6, 6, 0.9); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-top: 1px solid var(--line); }
+  .dock .btn { min-height: 48px; padding: 10px 12px; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "SLAB Ingénierie",
+  "url": "https://saadlayachi.com/",
+  "image": "https://saadlayachi.com/assets/img/og.png",
+  "telephone": "+33745375380",
+  "email": "saadlayachi@icloud.com",
+  "address": { "@type": "PostalAddress", "postalCode": "27200", "addressLocality": "Vernon", "addressCountry": "FR" },
+  "areaServed": ["Vernon", "Normandie", "Île-de-France"],
+  "founder": {
+    "@type": "Person",
+    "name": "Saad Layachi",
+    "jobTitle": "Ingénieur",
+    "alumniOf": "INSA Rouen Normandie",
+    "sameAs": ["https://www.linkedin.com/in/saad-layachi", "https://github.com/saadlayachi14"]
+  }
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#realisations">Aller au contenu</a>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#haut" aria-label="Saad Layachi, haut de la page">
+      <img src="assets/img/slab-s.webp" width="36" height="36" alt="">
+      <span>SAAD LAYACHI</span>
+    </a>
+    <nav class="nav" aria-label="Rubriques">
+      <a href="#realisations">Réalisations</a>
+      <a href="#services">Services</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-gold" href="tel:+33745375380">07 45 37 53 80</a>
+  </div>
+</header>
+
+<main id="haut">
+
+<section class="hero" style="padding-block:0" aria-label="Présentation">
+  <div class="wrap hero-in">
+    <div>
+      <p class="label">SLAB Ingénierie · Vernon</p>
+      <h1 class="silver">Vos outils numériques, livrés et en service.</h1>
+      <p class="lead">Sites web, applications métier, documents automatiques et assistants IA. Je suis Saad Layachi, ingénieur INSA&nbsp;: je conçois, je développe et je mets en ligne, pour les commerçants, les artisans et les PME.</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="#realisations">Voir mes réalisations</a>
+        <a class="btn btn-line" href="#contact">Parler de votre projet</a>
+      </div>
+    </div>
+    <div class="hero-logo">
+      <img src="assets/img/slab-logo.webp" width="900" height="900" alt="Logo de SLAB Ingénierie : un S doré au-dessus du nom en lettres argentées" fetchpriority="high">
+    </div>
+  </div>
+  <div class="wrap">
+    <ul class="chiffres">
+      <li><b class="gold">10</b><span>langues sur le site d'un salon de thé, que son gérant met à jour lui-même</span></li>
+      <li><b class="gold">÷&nbsp;4</b><span>le temps de réponse d'une plateforme métier</span></li>
+      <li><b class="gold">−&nbsp;50&nbsp;%</b><span>le temps de production de rapports Word et PowerPoint</span></li>
+      <li><b class="gold">2</b><span>sites de grands comptes équipés&nbsp;: Safran Nacelles et LVMH Hélios</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="realisations">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="label">Réalisations</p>
+      <h2 class="silver">Ce que j'ai livré.</h2>
+      <p class="lead">Des projets en ligne, que vous pouvez ouvrir et essayer.</p>
+    </div>
+
+    <div class="projets">
+      <article class="projet reveal">
+        <div class="media">
+          <div class="fenetre"><img src="assets/img/mak-mam.webp" width="1200" height="750" loading="lazy" alt="Page d'accueil du site de la Maison MAK &amp; MAM : le nom du salon, ses horaires et une photo du comptoir"></div>
+          <div class="telephone"><img src="assets/img/mak-mam-mobile.webp" width="520" height="1040" loading="lazy" alt="Le même site sur un téléphone"></div>
+        </div>
+        <div>
+          <p class="label">Site web · 2026</p>
+          <h3>Maison MAK &amp; MAM</h3>
+          <p class="quoi">Salon de thé, café et brunch à Vernon</p>
+          <p class="texte">Un site en dix langues, du français à l'arménien. Le gérant modifie lui-même ses horaires, son agenda et ses expositions&nbsp;: le site se met à jour seul.</p>
+          <a class="lien" href="https://www.maison-mak-mam-vernon.fr/" target="_blank" rel="noopener">Voir le site <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <article class="projet reveal">
+        <div class="media">
+          <div class="fenetre"><img src="assets/img/plume.webp" width="1200" height="750" loading="lazy" alt="Page d'accueil de Plume : le rapport d'intervention part avant vous du chantier"></div>
+          <div class="telephone"><img src="assets/img/plume-mobile.webp" width="520" height="1040" loading="lazy" alt="Plume sur un téléphone"></div>
+        </div>
+        <div>
+          <p class="label">Application · 2026</p>
+          <h3>Plume</h3>
+          <p class="quoi">Le rapport d'intervention des artisans</p>
+          <p class="texte">L'artisan dicte son rapport sur le téléphone, le client signe à l'écran et le PDF part aussitôt. L'application fonctionne sans réseau.</p>
+          <a class="lien" href="https://plume-terrain.netlify.app/" target="_blank" rel="noopener">Essayer Plume <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+      <article class="projet reveal">
+        <div class="media">
+          <div class="fenetre"><img src="assets/img/pharmacie.webp" width="1200" height="750" loading="lazy" alt="Page d'accueil du site de la Pharmacie La Mosquée, en français et en arabe, avec ses horaires"></div>
+          <div class="telephone"><img src="assets/img/pharmacie-mobile.webp" width="520" height="1040" loading="lazy" alt="Le même site sur un téléphone"></div>
+        </div>
+        <div>
+          <p class="label">Site web · 2026</p>
+          <h3>Pharmacie La Mosquée</h3>
+          <p class="quoi">Pharmacie de quartier à Oujda, au Maroc</p>
+          <p class="texte">Un site en français et en arabe, qui affiche en direct si la pharmacie est ouverte, à l'heure du Maroc.</p>
+          <a class="lien" href="https://pharmacielamosquee.netlify.app/" target="_blank" rel="noopener">Voir le site <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+    </div>
+
+    <div class="entreprise">
+      <article class="carte reveal">
+        <p class="label">En entreprise · 2023 à 2026</p>
+        <h3>Une plateforme métier, de l'idée aux clients</h3>
+        <p>Trois ans chez CNPP, à Vernon&nbsp;: une plateforme conçue, développée et mise en production, puis installée chez ses clients, Safran Nacelles et LVMH Hélios. Son assistant IA tourne sur le serveur de l'entreprise&nbsp;: aucune donnée ne sort.</p>
+        <ul class="mesures">
+          <li><b class="gold">÷&nbsp;100</b><span>les données traitées à chaque requête</span></li>
+          <li><b class="gold">÷&nbsp;4</b><span>le temps de réponse</span></li>
+          <li><b class="gold">−&nbsp;50&nbsp;%</b><span>le temps de production des livrables</span></li>
+        </ul>
+      </article>
+      <article class="carte reveal">
+        <p class="label">Compétition · 2024</p>
+        <h3>Course autonome A2RL</h3>
+        <p>À Abu Dhabi, avec l'équipe FR4IAV&nbsp;: la perception en trois dimensions d'une voiture de course sans pilote, en temps réel.</p>
+        <ul class="mesures" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+          <li><b class="gold">78,6&nbsp;%</b><span>de précision moyenne</span></li>
+          <li><b class="gold">&lt;&nbsp;50&nbsp;ms</b><span>pour détecter</span></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="background:var(--panel-2); border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="label">Services</p>
+      <h2 class="silver">Ce que je fais pour vous.</h2>
+    </div>
+    <div class="services">
+      <article class="service reveal">
+        <i>01</i>
+        <h3>Site web</h3>
+        <p>Clair, rapide, dans la langue de vos clients. Vous changez vos horaires et vos actualités vous-même, sans m'appeler.</p>
+      </article>
+      <article class="service reveal">
+        <i>02</i>
+        <h3>Application métier</h3>
+        <p>L'outil sur mesure qui remplace les tableaux, les ressaisies et les allers-retours.</p>
+      </article>
+      <article class="service reveal">
+        <i>03</i>
+        <h3>Documents automatiques</h3>
+        <p>Devis, rapports et comptes rendus prêts en quelques clics, à vos couleurs, avec les calculs déjà faits.</p>
+      </article>
+      <article class="service reveal">
+        <i>04</i>
+        <h3>Assistant IA privé</h3>
+        <p>Une IA qui répond à partir de vos documents, installée chez vous&nbsp;: rien ne sort de l'entreprise.</p>
+      </article>
+    </div>
+    <p class="apres reveal">Chaque projet commence par une conversation, sans engagement.</p>
+  </div>
+</section>
+
+<section id="apropos">
+  <div class="wrap">
+    <div class="apropos">
+      <figure class="portrait reveal">
+        <div class="cadre"><img src="assets/img/saad-layachi.webp" width="720" height="720" loading="lazy" alt="Portrait de Saad Layachi"></div>
+        <figcaption>Saad Layachi · Vernon, Normandie</figcaption>
+      </figure>
+      <div class="histoire reveal">
+        <p class="label">À propos</p>
+        <h2 class="silver">Mon histoire.</h2>
+        <p>Je m'appelle Saad Layachi. J'ai commencé mes études d'ingénieur à Fès, à l'INSA Euro-Méditerranée, puis je les ai terminées en France, à l'INSA Rouen Normandie.</p>
+        <p>Pendant trois ans d'alternance à Vernon, j'ai mené un projet de bout en bout&nbsp;: comprendre le métier, concevoir la plateforme, la développer, la mettre en production, puis l'installer chez ses clients et former les équipes. J'y ai appris l'essentiel&nbsp;: un outil n'a de valeur que le jour où quelqu'un s'en sert.</p>
+        <p>En 2024, j'ai aussi travaillé sur la perception d'une voiture de course autonome, pour une compétition internationale à Abu Dhabi.</p>
+        <p>Diplômé en septembre 2026, j'ai créé SLAB Ingénierie deux mois plus tard. Le nom réunit mes initiales et celles de mes parents. Mon premier client est un salon de thé de Vernon.</p>
+        <p>Je travaille en français, en anglais et en arabe, à Vernon, en Normandie, en Île-de-France et à distance.</p>
+      </div>
+    </div>
+    <ol class="etapes reveal">
+      <li><b>2020</b><em>Fès</em><span>Cycle préparatoire à l'INSA Euro-Méditerranée</span></li>
+      <li><b>2022</b><em>Rouen</em><span>Entrée à l'INSA Rouen Normandie</span></li>
+      <li><b>2023</b><em>Vernon</em><span>Ingénieur projets en alternance chez CNPP, pendant trois ans</span></li>
+      <li><b>2024</b><em>Abu Dhabi</em><span>Course autonome A2RL avec l'équipe FR4IAV</span></li>
+      <li><b>2026</b><em>Vernon</em><span>Diplôme d'ingénieur, puis création de SLAB Ingénierie</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <p class="label deux reveal">Contact</p>
+    <h2 class="silver reveal">Parlons de votre projet.</h2>
+    <p class="lead reveal">Un site, un outil, une mission ou un poste dans votre équipe&nbsp;: appelez-moi ou écrivez-moi deux lignes. Je réponds sous 24 heures ouvrées.</p>
+    <a class="numero gold reveal" href="tel:+33745375380">07 45 37 53 80</a>
+    <div class="actions reveal">
+      <a class="btn btn-gold" href="mailto:saadlayachi@icloud.com">saadlayachi@icloud.com</a>
+      <a class="btn btn-line" href="https://www.linkedin.com/in/saad-layachi" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+      <a class="btn btn-line" href="https://github.com/saadlayachi14" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p>Saad Layachi · SLAB Ingénierie · Vernon (27200)</p>
+    <p>SIRET 133 195 156 00012 · © <span data-annee>2026</span></p>
+    <details>
+      <summary>Mentions légales</summary>
+      <p><b>Éditeur.</b> Saad Layachi, entrepreneur individuel (SLAB Ingénierie), Vernon (27200), France. SIRET 133 195 156 00012. TVA non applicable, article 293 B du Code général des impôts. Contact&nbsp;: saadlayachi@icloud.com · 07 45 37 53 80.</p>
+      <p><b>Hébergement.</b> Netlify, Inc., San Francisco, Californie, États-Unis (netlify.com).</p>
+      <p><b>Données personnelles.</b> Ce site n'utilise ni cookie ni outil de mesure d'audience et ne collecte aucune donnée.</p>
+    </details>
+  </div>
+</footer>
+
+<nav class="dock" aria-label="Me joindre">
+  <a class="btn btn-gold" href="tel:+33745375380">Appeler</a>
+  <a class="btn btn-line" href="mailto:saadlayachi@icloud.com">Écrire</a>
+</nav>
+
+<script>
+  // Blocks appear as they come into view; without this script everything is simply visible.
+  (function () {
+    var blocks = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window)) { blocks.forEach(function (b) { b.classList.add("in"); }); return; }
+    var watcher = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add("in"); watcher.unobserve(entry.target); }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    blocks.forEach(function (b) { watcher.observe(b); });
+    document.querySelector("[data-annee]").textContent = new Date().getFullYear();
+  })();
+</script>
+</body>
+</html>
